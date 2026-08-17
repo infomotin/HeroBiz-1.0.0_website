@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('icon');
             $table->string('title');
             $table->text('description');
+            $table->string('image')->nullable();
+            $table->string('link')->nullable();
+            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_active')->default(true);
+            $table->integer('sort_order')->default(0);
             $table->timestamps();
         });
     }

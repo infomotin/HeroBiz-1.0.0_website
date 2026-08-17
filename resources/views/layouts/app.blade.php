@@ -29,7 +29,7 @@
         <!-- Our custom CSS via Vite -->
         @vite(['resources/css/app.css'])
     </head>
-    <body class="index-page">
+    <body class="@yield('body_class', 'index-page')">
         @include('layouts.partials.header')
         <main>
             @yield('content')

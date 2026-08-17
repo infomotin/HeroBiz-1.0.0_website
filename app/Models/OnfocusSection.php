@@ -4,21 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Hero extends Model
+class OnfocusSection extends Model
 {
     protected $fillable = [
-        'title',
-        'subtitle',
+        'heading',
         'description',
-        'image',
+        'checklist_items',
         'video_url',
         'btn_text',
         'btn_link',
-        'video_btn_text',
         'is_active',
     ];
 
     protected $casts = [
+        'checklist_items' => 'array',
         'is_active' => 'boolean',
     ];
 }

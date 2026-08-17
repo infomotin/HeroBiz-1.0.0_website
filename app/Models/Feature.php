@@ -4,21 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Testimonial extends Model
+class Feature extends Model
 {
     protected $fillable = [
-        'name',
-        'role',
-        'image',
+        'title',
+        'icon',
+        'color',
+        'description',
         'content',
-        'rating',
+        'checklist_items',
+        'image',
         'is_active',
         'sort_order',
     ];
 
     protected $casts = [
-        'rating' => 'integer',
+        'checklist_items' => 'array',
         'is_active' => 'boolean',
-        'sort_order' => 'integer',
     ];
 }

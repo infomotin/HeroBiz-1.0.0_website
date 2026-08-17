@@ -4,26 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Pricing extends Model
 {
     protected $fillable = [
-        'icon',
-        'title',
-        'description',
-        'image',
-        'link',
+        'name',
+        'price',
+        'period',
+        'features',
         'is_featured',
+        'btn_text',
+        'btn_link',
         'is_active',
         'sort_order',
     ];
 
     protected $casts = [
+        'price' => 'decimal:2',
+        'features' => 'array',
         'is_featured' => 'boolean',
         'is_active' => 'boolean',
     ];
-
-    public function details()
-    {
-        return $this->hasMany(ServiceDetail::class);
-    }
 }

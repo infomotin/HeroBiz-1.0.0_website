@@ -6,29 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('testimonials', function (Blueprint $table) {
+        Schema::create('pricings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('role')->nullable();
-            $table->string('image')->nullable();
-            $table->text('content');
-            $table->integer('rating')->default(5);
+            $table->decimal('price', 8, 2);
+            $table->string('period')->default('/ month');
+            $table->json('features');
+            $table->boolean('is_featured')->default(false);
+            $table->string('btn_text')->default('Buy Now');
+            $table->string('btn_link')->nullable();
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('testimonials');
+        Schema::dropIfExists('pricings');
     }
 };
