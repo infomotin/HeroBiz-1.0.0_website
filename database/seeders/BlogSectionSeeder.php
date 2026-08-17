@@ -80,9 +80,8 @@ class BlogSectionSeeder extends Seeder
             if (!empty($tagIds)) {
                 $count = rand(0, min(3, count($tagIds)));
                 if ($count > 0) {
-                    $post->tags()->attach(
-                        array_rand($tagIds, $count)
-                    );
+                    $randomTagIds = $createdTags->random($count)->pluck('id')->toArray();
+                    $post->tags()->attach($randomTagIds);
                 }
             }
 

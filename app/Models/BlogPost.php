@@ -28,6 +28,7 @@ class BlogPost extends Model
 
     protected $casts = [
         'views' => 'integer',
+        'published_at' => 'datetime',
     ];
 
     /**

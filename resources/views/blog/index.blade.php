@@ -40,7 +40,11 @@
                                 <div class="post-meta">
                                     <p class="post-author">{{ $post->author->name }}</p>
                                     <p class="post-date">
-                                        <time datetime="{{ $post->published_at->toDateTimeString() }}">{{ $post->published_at->format('M j, Y') }}</time>
+                                        @if ($post->published_at)
+                                            <time datetime="{{ $post->published_at->toDateTimeString() }}">{{ $post->published_at->format('M j, Y') }}</time>
+                                        @else
+                                            <span>No date</span>
+                                        @endif
                                     </p>
                                 </div>
                             </div>
