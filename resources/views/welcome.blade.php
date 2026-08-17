@@ -1,95 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿@extends('layouts.app')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - HeroBiz Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+@section('title', 'Index - HeroBiz Bootstrap Template')
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+@section('body_class', 'index-page')
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: HeroBiz
-  * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">HeroBiz</h1>
-        <span>.</span>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Dashboard<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
-
-    </div>
-  </header>
-
-  <main class="main">
+@section('content')
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
       <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
-        <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
+        <img src="{{ asset('assets/img/hero-img.svg') }}" class="img-fluid animated" alt="">
         <h1>Welcome to <span>HeroBiz</span></h1>
         <p>Et voluptate esse accusantium accusamus natus reiciendis quidem voluptates similique aut.</p>
         <div class="d-flex">
@@ -160,7 +81,7 @@
 
           <div class="col-lg-5">
             <div class="about-img">
-              <img src="assets/img/about-portrait.jpg" class="img-fluid" alt="">
+              <img src="{{ asset('assets/img/about-portrait.jpg') }}" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -267,27 +188,27 @@
         <div class="row gy-4">
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
         </div>
@@ -311,7 +232,7 @@
 
           <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
             <div class="img">
-              <img src="assets/img/cta.jpg" alt="" class="img-fluid">
+              <img src="{{ asset('assets/img/cta.jpg') }}" alt="" class="img-fluid">
             </div>
           </div>
 
@@ -424,7 +345,7 @@
                 </p>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                <img src="assets/img/features-1.svg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/features-1.svg') }}" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 1 -->
@@ -450,7 +371,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-2.svg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/features-2.svg') }}" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 2 -->
@@ -475,7 +396,7 @@
                 </p>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-3.svg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/features-3.svg') }}" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 3 -->
@@ -500,7 +421,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-4.svg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/features-4.svg') }}" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 4 -->
@@ -525,7 +446,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-5.svg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/features-5.svg') }}" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 5 -->
@@ -550,7 +471,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-6.svg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/features-6.svg') }}" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 6 -->
@@ -577,7 +498,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/services-1.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -594,7 +515,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/services-2.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -611,7 +532,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/services-3.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -628,7 +549,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/services-4.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -646,7 +567,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-5.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/services-5.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -664,7 +585,7 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-6.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/services-6.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -694,7 +615,7 @@
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+      <img src="{{ asset('assets/img/testimonials-bg.jpg') }}" class="testimonials-bg" alt="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -718,7 +639,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
@@ -734,7 +655,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="{{ asset('assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <div class="stars">
@@ -750,7 +671,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="{{ asset('assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <div class="stars">
@@ -766,7 +687,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="{{ asset('assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <div class="stars">
@@ -782,7 +703,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="{{ asset('assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <div class="stars">
@@ -942,7 +863,7 @@
           </div>
 
           <div class="col-lg-5 order-1 order-lg-2">
-            <img src="assets/img/faq.jpg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+            <img src="{{ asset('assets/img/faq.jpg') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
           </div>
         </div>
 
@@ -975,9 +896,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -985,9 +906,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/product-1.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/product-1.jpg') }}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -995,9 +916,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/branding-1.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/branding-1.jpg') }}" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1005,9 +926,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/books-1.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/books-1.jpg') }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1015,9 +936,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/app-2.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/app-2.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1025,9 +946,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/product-2.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/product-2.jpg') }}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1035,9 +956,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/branding-2.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/branding-2.jpg') }}" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1045,9 +966,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/books-2.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/books-2.jpg') }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1055,9 +976,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/app-3.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/app-3.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1065,9 +986,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/product-3.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/product-3.jpg') }}" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1075,9 +996,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/branding-3.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/branding-3.jpg') }}" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1085,9 +1006,9 @@
 
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/portfolio/books-3.jpg') }}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{{ asset('assets/img/portfolio/books-3.jpg') }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -1117,7 +1038,7 @@
           <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <div class="social">
@@ -1135,7 +1056,7 @@
           <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <div class="social">
@@ -1153,7 +1074,7 @@
           <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/team/team-3.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <div class="social">
@@ -1191,7 +1112,7 @@
             <article>
 
               <div class="post-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/blog/blog-1.jpg') }}" alt="" class="img-fluid">
               </div>
 
               <p class="post-category">Politics</p>
@@ -1201,7 +1122,7 @@
               </h2>
 
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <img src="{{ asset('assets/img/blog/blog-author.jpg') }}" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
                   <p class="post-author">Maria Doe</p>
                   <p class="post-date">
@@ -1217,7 +1138,7 @@
             <article>
 
               <div class="post-img">
-                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/blog/blog-2.jpg') }}" alt="" class="img-fluid">
               </div>
 
               <p class="post-category">Sports</p>
@@ -1227,7 +1148,7 @@
               </h2>
 
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <img src="{{ asset('assets/img/blog/blog-author-2.jpg') }}" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
                   <p class="post-author">Allisa Mayer</p>
                   <p class="post-date">
@@ -1243,7 +1164,7 @@
             <article>
 
               <div class="post-img">
-                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                <img src="{{ asset('assets/img/blog/blog-3.jpg') }}" alt="" class="img-fluid">
               </div>
 
               <p class="post-category">Entertainment</p>
@@ -1253,7 +1174,7 @@
               </h2>
 
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <img src="{{ asset('assets/img/blog/blog-author-3.jpg') }}" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
                   <p class="post-author">Mark Dower</p>
                   <p class="post-date">
@@ -1353,119 +1274,6 @@
 
     </section><!-- /Contact Section -->
 
-  </main>
 
-  <footer id="footer" class="footer dark-background">
+@endsection
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">HeroBiz</span>
-            </a>
-            <div class="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Hic solutasetp</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nobis illum</h4>
-            <ul>
-              <li><a href="#">Ipsam</a></li>
-              <li><a href="#">Laudantium dolorum</a></li>
-              <li><a href="#">Dinera</a></li>
-              <li><a href="#">Trodelas</a></li>
-              <li><a href="#">Flexo</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="copyright text-center">
-      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-
-        <div class="d-flex flex-column align-items-center align-items-lg-start">
-          <div>
-            © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
-          </div>
-        </div>
-
-        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
-        </div>
-
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
