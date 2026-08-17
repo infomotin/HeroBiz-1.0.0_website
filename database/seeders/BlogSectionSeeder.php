@@ -25,8 +25,9 @@ class BlogSectionSeeder extends Seeder
             ['name' => 'Entertainment', 'slug' => 'entertainment'],
         ];
 
+        $createdCategories = collect();
         foreach ($categories as $category) {
-            BlogCategory::factory()->create($category);
+            $createdCategories->push(BlogCategory::create($category));
         }
 
         // Create authors
@@ -39,8 +40,9 @@ class BlogSectionSeeder extends Seeder
             ['name' => 'Mika Lendon', 'email' => 'mika@example.com', 'bio' => 'Entertainment Critic'],
         ];
 
+        $createdAuthors = collect();
         foreach ($authors as $author) {
-            BlogAuthor::factory()->create($author);
+            $createdAuthors->push(BlogAuthor::create($author));
         }
 
         // Create tags (optional)
@@ -50,18 +52,19 @@ class BlogSectionSeeder extends Seeder
             ['name' => 'Featured', 'slug' => 'featured'],
         ];
 
+        $createdTags = collect();
         foreach ($tags as $tag) {
-            BlogTag::factory()->create($tag);
+            $createdTags->push(BlogTag::create($tag));
         }
 
         // Get the created categories and authors for assignment
-        $categoryIds = BlogCategory::pluck('id')->toArray();
-        $authorIds = BlogAuthor::pluck('id')->toArray();
-        $tagIds = BlogTag::pluck('id')->toArray();
+        $categoryIds = $createdCategories->pluck('id')->toArray();
+        $authorIds = $createdAuthors->pluck('id')->toArray();
+        $tagIds = $createdTags->pluck('id')->toArray();
 
         // Create 6 blog posts
         for ($i = 1; $i <= 6; $i++) {
-            $post = BlogPost::factory()->create([
+            $post = BlogPost::create([
                 'title' => "Post Title $i",
                 'slug' => Str::slug("Post Title $i"),
                 'excerpt' => "This is the excerpt for post number $i.",
@@ -74,13 +77,18 @@ class BlogSectionSeeder extends Seeder
             ]);
 
             // Attach random tags (0 to 3 tags per post)
-            $post->tags()->attach(
-                array_rand($tagIds, rand(0, min(3, count($tagIds))))
-            );
+            if (!empty($tagIds)) {
+                $count = rand(0, min(3, count($tagIds)));
+                if ($count > 0) {
+                    $post->tags()->attach(
+                        array_rand($tagIds, $count)
+                    );
+                }
+            }
 
             // Create a comment for the first post
             if ($i === 1) {
-                BlogComment::factory()->create([
+                BlogComment::create([
                     'post_id' => $post->id,
                     'name' => 'John Commenter',
                     'email' => 'john@example.com',
