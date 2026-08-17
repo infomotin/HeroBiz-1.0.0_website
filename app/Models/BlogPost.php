@@ -21,7 +21,6 @@ class BlogPost extends Model
         'category_id',
         'published_at',
         'views',
-        'status', // if we want to add status (draft/published)
     ];
 
     protected $dates = ['published_at', 'deleted_at'];

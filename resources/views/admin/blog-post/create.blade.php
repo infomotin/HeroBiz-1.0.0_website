@@ -55,14 +55,7 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Published At</label>
                     <input type="datetime-local" name="published_at" value="{{ old('published_at') }}" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Status</label>
-                    <select name="status" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
-                        <option value="draft" {{ old('status') == 'draft' ? 'selected' : '' }}>Draft</option>
-                        <option value="published" {{ old('status') == 'published' ? 'selected' : '' }}>Published</option>
-                        <option value="archived" {{ old('status') == 'archived' ? 'selected' : '' }}>Archived</option>
-                    </select>
+                    <p class="mt-1 text-xs text-gray-500">Leave blank to save as draft.</p>
                 </div>
             </div>
             <div>

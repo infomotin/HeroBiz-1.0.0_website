@@ -15,7 +15,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{ route('blog.index') }}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -39,6 +39,9 @@
       </nav>
 
       <a class="btn-getstarted" href="{{ url('/') }}#about">Get Started</a>
+      @auth
+        <a class="btn-getstarted ms-2" href="{{ route('admin.dashboard') }}" style="background: #556b2f;">Admin</a>
+      @endauth
 
     </div>
   </header>

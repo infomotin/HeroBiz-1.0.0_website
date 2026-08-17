@@ -1,26 +1,28 @@
 <footer id="footer" class="footer dark-background">
+    @php use App\Models\Setting; @endphp
 
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
             <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-              <span class="sitename">HeroBiz</span>
+              <span class="sitename">{{ Setting::get('site_name', 'HeroBiz') }}</span>
             </a>
             <div class="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
+              @php $addr = Setting::get('contact_address', 'A108 Adam Street, New York, NY 535022'); @endphp
+              <p>{{ explode(',', $addr)[0] ?? $addr }}</p>
+              <p>{{ trim(explode(',', $addr)[1] ?? '') }}</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>{{ Setting::get('contact_phone', '+1 5589 55488 55') }}</span></p>
+              <p><strong>Email:</strong> <span>{{ Setting::get('contact_email', 'info@example.com') }}</span></p>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="{{ url('/') }}">Home</a></li>
+              <li><a href="{{ url('/#about') }}">About us</a></li>
+              <li><a href="{{ url('/#services') }}">Services</a></li>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
             </ul>
@@ -29,11 +31,17 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
+              @if(isset($footerServices) && count($footerServices))
+                @foreach($footerServices->take(5) as $service)
+                <li><a href="{{ $service->link ?? route('services.show', $service) }}">{{ $service->title }}</a></li>
+                @endforeach
+              @else
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Product Management</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Graphic Design</a></li>
+              @endif
             </ul>
           </div>
 
@@ -68,7 +76,7 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div>
-            © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+            © Copyright <strong><span>{{ Setting::get('footer_copyright', 'MyWebsite') }}</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
@@ -80,10 +88,10 @@
         </div>
 
         <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href="{{ Setting::get('social_twitter', '#') }}"><i class="bi bi-twitter-x"></i></a>
+          <a href="{{ Setting::get('social_facebook', '#') }}"><i class="bi bi-facebook"></i></a>
+          <a href="{{ Setting::get('social_instagram', '#') }}"><i class="bi bi-instagram"></i></a>
+          <a href="{{ Setting::get('social_linkedin', '#') }}"><i class="bi bi-linkedin"></i></a>
         </div>
 
       </div>

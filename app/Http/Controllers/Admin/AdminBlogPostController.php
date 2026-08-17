@@ -37,7 +37,6 @@ class AdminBlogPostController extends Controller
             'author_id' => 'required|exists:blog_authors,id',
             'category_id' => 'required|exists:blog_categories,id',
             'published_at' => 'nullable|date',
-            'status' => 'in:draft,published,archived',
             'tags' => 'nullable|array',
             'tags.*' => 'exists:blog_tags,id',
         ]);
@@ -81,7 +80,6 @@ class AdminBlogPostController extends Controller
             'author_id' => 'required|exists:blog_authors,id',
             'category_id' => 'required|exists:blog_categories,id',
             'published_at' => 'nullable|date',
-            'status' => 'in:draft,published,archived',
             'tags' => 'nullable|array',
             'tags.*' => 'exists:blog_tags,id',
         ]);

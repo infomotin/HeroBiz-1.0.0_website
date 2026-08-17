@@ -24,13 +24,15 @@ class AdminOnfocusController extends Controller
         $validated = $request->validate([
             'heading' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'checklist_items' => 'nullable|array',
-            'checklist_items.*' => 'string',
+            'checklist_text' => 'nullable|string',
             'video_url' => 'nullable|string|max:255',
             'btn_text' => 'nullable|string|max:255',
             'btn_link' => 'nullable|string|max:255',
             'is_active' => 'boolean',
         ]);
+
+        $validated['checklist_items'] = array_filter(array_map('trim', explode("\n", $validated['checklist_text'] ?? '')));
+        unset($validated['checklist_text']);
 
         OnfocusSection::create($validated);
 
@@ -52,13 +54,15 @@ class AdminOnfocusController extends Controller
         $validated = $request->validate([
             'heading' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'checklist_items' => 'nullable|array',
-            'checklist_items.*' => 'string',
+            'checklist_text' => 'nullable|string',
             'video_url' => 'nullable|string|max:255',
             'btn_text' => 'nullable|string|max:255',
             'btn_link' => 'nullable|string|max:255',
             'is_active' => 'boolean',
         ]);
+
+        $validated['checklist_items'] = array_filter(array_map('trim', explode("\n", $validated['checklist_text'] ?? '')));
+        unset($validated['checklist_text']);
 
         $onfocusSection->update($validated);
 

@@ -27,12 +27,14 @@ class AdminFeatureController extends Controller
             'color' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'content' => 'nullable|string',
-            'checklist_items' => 'nullable|array',
-            'checklist_items.*' => 'string',
+            'checklist_text' => 'nullable|string',
             'image' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer',
         ]);
+
+        $validated['checklist_items'] = array_filter(array_map('trim', explode("\n", $validated['checklist_text'] ?? '')));
+        unset($validated['checklist_text']);
 
         Feature::create($validated);
 
@@ -57,12 +59,14 @@ class AdminFeatureController extends Controller
             'color' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'content' => 'nullable|string',
-            'checklist_items' => 'nullable|array',
-            'checklist_items.*' => 'string',
+            'checklist_text' => 'nullable|string',
             'image' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer',
         ]);
+
+        $validated['checklist_items'] = array_filter(array_map('trim', explode("\n", $validated['checklist_text'] ?? '')));
+        unset($validated['checklist_text']);
 
         $feature->update($validated);
 

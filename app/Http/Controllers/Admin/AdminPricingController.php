@@ -25,14 +25,16 @@ class AdminPricingController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'period' => 'nullable|string|max:255',
-            'features' => 'nullable|array',
-            'features.*' => 'string',
+            'features_text' => 'nullable|string',
             'is_featured' => 'boolean',
             'btn_text' => 'nullable|string|max:255',
             'btn_link' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer',
         ]);
+
+        $validated['features'] = array_filter(array_map('trim', explode("\n", $validated['features_text'] ?? '')));
+        unset($validated['features_text']);
 
         Pricing::create($validated);
 
@@ -55,14 +57,16 @@ class AdminPricingController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'period' => 'nullable|string|max:255',
-            'features' => 'nullable|array',
-            'features.*' => 'string',
+            'features_text' => 'nullable|string',
             'is_featured' => 'boolean',
             'btn_text' => 'nullable|string|max:255',
             'btn_link' => 'nullable|string|max:255',
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer',
         ]);
+
+        $validated['features'] = array_filter(array_map('trim', explode("\n", $validated['features_text'] ?? '')));
+        unset($validated['features_text']);
 
         $pricing->update($validated);
 
